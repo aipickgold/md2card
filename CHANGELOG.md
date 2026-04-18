@@ -2,6 +2,24 @@
 
 All notable changes to **md2card** are documented here. This project follows [Semantic Versioning](https://semver.org/) and the [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) format.
 
+## [v1.1.0] · 2026-04-18
+
+### Added
+- 🧠 **Claude Code Skill 官方上线**(`skills/md2card/SKILL.md`)· 对话式让 AI 做小红书卡片
+- 🔗 `/card-gen` 页面支持 **URL 参数自动载入 + 自动导出 ZIP**(`?md=base64&theme=xxx&autoexport=zip`)
+- 📷 编辑器**本地图片上传**(base64 inline,不上传服务器)
+- 📚 `docs/skill-tutorial.md` · `docs/examples.md`(10 场景)· `docs/architecture.md`
+- 默认示例改为 5 页内容,展示封面/列表/表格/金句/CTA 各种能力
+- README 全面改版为 Skill-first 结构
+
+### Architecture
+- 明确 Skill → 浏览器(html2canvas)的渲染路径
+- 服务器不跑 headless Chrome,保持 894MB RAM 实例稳定
+
+### Notes
+- 订阅价格不变
+- 主题和引擎 schema 向后兼容
+
 ## [Unreleased]
 
 ### Planned
