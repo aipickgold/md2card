@@ -28,6 +28,27 @@
 
 ---
 
+## 🧠 首推用法 · 在 Claude Code 里调用 Skill
+
+**CardMD 最自然的使用方式是作为 Claude Code Skill**,创作过程全程在对话里完成,不需要切换到编辑器。
+
+```bash
+# 一键安装到 Claude Code(项目级)
+mkdir -p .claude/skills && curl -fsSL \
+  https://raw.githubusercontent.com/aipickgold/md2card/main/skills/md2card/SKILL.md \
+  -o .claude/skills/md2card.md
+```
+
+然后在对话里:
+
+> "把我的读书笔记做成 5 张小红书卡片,用冰蓝主题"
+
+Claude Code 会:① 起草 Markdown → ② 选主题 → ③ 给你一个链接,点开后**浏览器 3 秒自动下载 cards.zip**。
+
+[→ 完整 Skill 文档](./skills/md2card/README.md) · [→ 或者直接用网页版](https://aipickgold.com/card-gen)
+
+---
+
 ## ✨ 为什么选 CardMD
 
 小红书图文贴需要把内容切成多张 3:4 卡片,手动排版要 1-2 小时。**CardMD 把这个过程压缩到 30 秒**。
