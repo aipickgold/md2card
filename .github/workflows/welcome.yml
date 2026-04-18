@@ -1,0 +1,14 @@
+name: Welcome first-time contributors
+on:
+  issues: {types: [opened]}
+  pull_request_target: {types: [opened]}
+permissions: {issues: write, pull-requests: write}
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/first-interaction@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          issue-message: "👋 欢迎首次提 Issue!我会尽快查看。期间可以先看看 [文档](./README.md) 或 [FAQ](./docs/faq.md)。"
+          pr-message: "🎉 感谢首次贡献!我会尽快 review。可以先跑一下 lint / 自测,并确认 CHANGELOG.md 已更新。"

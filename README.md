@@ -10,10 +10,15 @@
 
 <br/>
 
-[![Website](https://img.shields.io/badge/官网-aipickgold.com-F43F5E?style=for-the-badge&logo=webpack&logoColor=white)](https://aipickgold.com/card-gen)
+[English](./README.en.md) · **简体中文**
+
+[![Website](https://img.shields.io/badge/官网-aipickgold.com%2Fcard--gen-F43F5E?style=for-the-badge&logoColor=white)](https://aipickgold.com/card-gen)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](./LICENSE)
 [![Themes](https://img.shields.io/badge/Themes-55%2B-F43F5E?style=for-the-badge)](https://aipickgold.com/card-gen/themes)
 [![Stars](https://img.shields.io/github/stars/aipickgold/md2card?style=for-the-badge&logo=github&color=yellow)](https://github.com/aipickgold/md2card/stargazers)
+[![Release](https://img.shields.io/github/v/release/aipickgold/md2card?style=for-the-badge&color=brightgreen)](https://github.com/aipickgold/md2card/releases)
+[![Last Commit](https://img.shields.io/github/last-commit/aipickgold/md2card?style=for-the-badge)](https://github.com/aipickgold/md2card/commits/main)
+[![Issues](https://img.shields.io/github/issues/aipickgold/md2card?style=for-the-badge)](https://github.com/aipickgold/md2card/issues)
 
 <br/>
 
@@ -154,5 +159,9 @@ MIT License · 引擎代码开源,付费主题商业授权。字体资源均为 
 **如果 CardMD 帮你做出了好看的小红书图文,请点个 ⭐ Star 支持一下!**
 
 Made with ❤️ by [宸的拾金笔记](https://aipickgold.com) · 2026
+
+💬 [Discussions](https://github.com/aipickgold/md2card/discussions) · 🐛 [Issues](https://github.com/aipickgold/md2card/issues) · 🤝 [Contributing](./CONTRIBUTING.md) · 🔒 [Security](./SECURITY.md) · 🗺️ [Roadmap](./docs/roadmap.md)
+
+[![Star History Chart](https://api.star-history.com/svg?repos=aipickgold/md2card&type=Date)](https://star-history.com/#aipickgold/md2card&Date)
 
 </div>
