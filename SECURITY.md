@@ -4,7 +4,7 @@
 
 如果你发现了安全漏洞,请 **不要公开提 Issue**。请通过以下方式私下告知我们:
 
-- **邮箱**:`hello@aipickgold.com`
+- **邮箱**:`soarwill06@gmail.com`
 - **主题**:`[SECURITY] md2card - 简要描述`
 - **内容**:
   - 漏洞描述与影响范围

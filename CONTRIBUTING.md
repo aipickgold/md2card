@@ -106,7 +106,7 @@
 ## 📮 沟通
 
 - **首选**:[Issues](https://github.com/aipickgold/md2card/issues) 和 [Discussions](https://github.com/aipickgold/md2card/discussions)
-- **紧急**:hello@aipickgold.com
+- **紧急**:soarwill06@gmail.com
 - **商业合作**:同邮箱,标题注明「合作」
 
 我们是一个小而专注的团队,大部分 Issue 会在 24-48 小时内回复。

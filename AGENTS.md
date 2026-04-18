@@ -45,4 +45,4 @@ Paste this in your PR description:
 
 - Issues:https://github.com/aipickgold/md2card/issues
 - Discussions:https://github.com/aipickgold/md2card/discussions
-- Email:hello@aipickgold.com(紧急)
+- Email:soarwill06@gmail.com(紧急)

@@ -59,4 +59,4 @@ Claude Code(你的电脑)
 
 ---
 
-任何问题:[issue](https://github.com/aipickgold/md2card/issues) 或邮件 hello@aipickgold.com
+任何问题:[issue](https://github.com/aipickgold/md2card/issues) 或邮件 soarwill06@gmail.com

@@ -85,7 +85,7 @@ MIT · engine code open, Pro themes commercial. Fonts: SIL OFL.
 
 - Website: [aipickgold.com](https://aipickgold.com)
 - WeChat: `aipickgold`
-- Email: hello@aipickgold.com
+- Email: soarwill06@gmail.com
 
 ---
 
