@@ -2,6 +2,25 @@
 
 All notable changes to **md2card** are documented here. This project follows [Semantic Versioning](https://semver.org/) and the [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) format.
 
+## [v1.2.0] · 2026-04-19
+
+### Added
+- 🔑 **Pro API Key 鉴权系统上线** · 购买后通过微信客服 `aipickgold` 接收 `CMWX-XXXX-XXXX-XXXX` 格式的 API Key
+- 🧠 Skill URL 模板新增 `&key=<LICENSE>` 参数,Claude 从 `MD2CARD_LICENSE_KEY` 环境变量读取
+- 🌐 Web 编辑器右侧新增**圆形 Pro 按钮**(免费状态会 pulsing 提示,点击弹出激活框)
+- 🔒 免费版导出自动带 "宸的拾金笔记 · aipickgold.com" 水印;Pro 无水印
+- 🛡️ `?key=` URL 参数在进入页面 50ms 内被 `history.replaceState` 剥离,避免进浏览器历史 / Referer / 分享截图
+- 🛡️ Nginx access log 脱敏:不再记录 query string(防 key 意外入日志)
+
+### Changed
+- SKILL.md URL 模板默认包含 `&key=$MD2CARD_LICENSE_KEY`,无 key 时落到带水印免费版
+- 激活状态在同设备 localStorage 缓存 7 天,过期自动后台 re-verify
+
+### Notes
+- bundle-lifetime(合并 Lifetime ¥299)的 key 同时解锁 md2wx + md2card
+- 产品独立 key 按产品作用域校验,跨产品使用会返回 `wrong_product`
+- 数据隐私:License 数据只保存在作者的阿里云 ECS,不使用第三方数据库
+
 ## [v1.1.0] · 2026-04-18
 
 ### Added

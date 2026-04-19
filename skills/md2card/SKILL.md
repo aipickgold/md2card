@@ -57,11 +57,14 @@ description: Generate Xiaohongshu (小红书) image cards from Markdown. Call th
 构造链接:
 
 ```
-https://aipickgold.com/card-gen?theme=<themeId>&md=<BASE64>&autoexport=zip
+https://aipickgold.com/card-gen?theme=<themeId>&md=<BASE64>&key=<LICENSE>&autoexport=zip
 ```
 
 - `theme`: 上一步选的主题 ID
 - `md`: markdown 内容 **base64(URL-safe)** 编码
+- `key`(**Pro 用户必填**):CardMD 或合并 Lifetime 的 API Key,格式 `CMWX-XXXX-XXXX-XXXX`
+  - 从用户环境变量 `MD2CARD_LICENSE_KEY` 或 `CARDMD_LICENSE_KEY` 读取
+  - 如果没有,就 **不加这个参数** — 用户会拿到带水印的免费版 ZIP,自己手动去网页输入
 - `autoexport=zip`: 页面自动触发全部导出 ZIP
 - 可选 `ratio=3:4|1:1|9:16`(默认 3:4,小红书标准)
 
@@ -69,16 +72,24 @@ Bash 构造示例:
 
 ```bash
 MD=$(printf '%s' "$MARKDOWN" | base64 | tr '+/' '-_' | tr -d '=' | tr -d '\n')
-echo "https://aipickgold.com/card-gen?theme=know-blue&md=$MD&autoexport=zip"
+KEY_PART=""
+if [ -n "${MD2CARD_LICENSE_KEY:-}" ]; then
+  KEY_PART="&key=${MD2CARD_LICENSE_KEY}"
+fi
+echo "https://aipickgold.com/card-gen?theme=know-blue&md=${MD}${KEY_PART}&autoexport=zip"
 ```
 
 Python 构造示例:
 
 ```python
-import base64, urllib.parse
+import base64, os
 md_b64 = base64.urlsafe_b64encode(markdown.encode()).decode().rstrip("=")
-url = f"https://aipickgold.com/card-gen?theme=know-blue&md={md_b64}&autoexport=zip"
+key = os.environ.get("MD2CARD_LICENSE_KEY", "")
+key_part = f"&key={key}" if key else ""
+url = f"https://aipickgold.com/card-gen?theme=know-blue&md={md_b64}{key_part}&autoexport=zip"
 ```
+
+**安全说明**:`?key=` 参数进到浏览器后 50ms 内会被 `history.replaceState` 从地址栏剥离(防止进入浏览器历史/截图/Referer),随后写入 localStorage(缓存 7 天)。但仍需提醒用户**不要把这条链接转发给别人** — Skill 可以在返回消息里带一句提示。
 
 ### 4. 告知用户
 
@@ -89,12 +100,21 @@ url = f"https://aipickgold.com/card-gen?theme=know-blue&md={md_b64}&autoexport=z
 
 🔗 点击下方链接打开,页面会在 3 秒后自动下载 cards.zip:
 
-https://aipickgold.com/card-gen?theme=know-blue&md=xxxx&autoexport=zip
+https://aipickgold.com/card-gen?theme=know-blue&md=xxxx&key=CMWX-XXXX-XXXX-XXXX&autoexport=zip
 
 ZIP 里包含 N 张 1080×1440 PNG,直接上传到小红书图文贴即可。
+⚠️ 这条链接含你的 API Key,请不要转发给别人(Key 泄露请在后台吊销重发)。
 
 如果想预览每张卡、调整细节,不要加 autoexport 参数:
-https://aipickgold.com/card-gen?theme=know-blue&md=xxxx
+https://aipickgold.com/card-gen?theme=know-blue&md=xxxx&key=CMWX-XXXX-XXXX-XXXX
+```
+
+如果用户**没有 `MD2CARD_LICENSE_KEY`**,直接返回不带 key 的链接,提示用户:
+
+```
+未检测到 API Key,你会拿到带水印的免费版。
+要解锁无水印 + 全 55 主题,在微信联系 aipickgold 购买,然后:
+  export MD2CARD_LICENSE_KEY=CMWX-XXXX-XXXX-XXXX
 ```
 
 ## 触发示例

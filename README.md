@@ -155,6 +155,32 @@ cards.zip 自动下载 ✅
 
 ---
 
+## 🔑 API Key(Pro 用户必读)
+
+购买后通过**微信客服** `aipickgold` 接收一串 API Key(格式:`CMWX-XXXX-XXXX-XXXX`)。两种方式激活:
+
+### 方式 A · Skill(推荐,零操作)
+
+```bash
+export MD2CARD_LICENSE_KEY=CMWX-XXXX-XXXX-XXXX  # 加到 ~/.zshrc 或 ~/.bashrc
+```
+
+之后对话里让 Claude 生成卡片时,Skill 自动把 key 拼进 URL 参数。打开链接后页面**立即从地址栏剥离 key**(防进浏览器历史),同设备 7 天内免再输入。
+
+### 方式 B · 网页版(手动)
+
+打开 [`aipickgold.com/card-gen`](https://aipickgold.com/card-gen) → 右侧圆形按钮 🔑 → 粘贴 Key → 激活。
+
+### 特性
+
+- ✅ **跨设备使用**:同一个 Key 可以在多台设备激活,admin 后台可以看到使用次数
+- ✅ **软校验**:首次联网 verify 后,7 天内离线也能用(缓存在浏览器 localStorage)
+- ✅ **产品作用域**:CardMD 单独 Key 只解锁 CardMD;合并 Lifetime(¥299)的 Key 同时解锁 [md2wx](https://github.com/aipickgold/md2wx)
+- ✅ **隐私**:License 只存在作者自建的阿里云 ECS 上,不经过第三方数据库
+- ✅ **退款/吊销**:admin 可以立即吊销某个 Key,前端下次 verify 会降级回免费版
+
+---
+
 ## 💎 定价
 
 | 档位 | 价格 | 适合 |
@@ -165,12 +191,16 @@ cards.zip 自动下载 ✅
 | **Pro Lifetime** | ¥199 买断 | 永久 + 所有后续更新 |
 | **合并 Lifetime** | ¥299 | md2card + [md2wx](https://github.com/aipickgold/md2wx) 两产品永久 |
 
+购买后**在 24 小时内**通过微信客服 `aipickgold` 发放 API Key。
+有任何激活问题也走这个渠道。
+
 [→ 完整定价与 FAQ](https://aipickgold.com/pricing)
 
 ---
 
 ## 🗺️ Roadmap · 🕒 CHANGELOG
 
+- [🔑 v1.2.0](./CHANGELOG.md) — 2026-04-19 · Pro API Key 鉴权系统上线 + Skill 支持 license key
 - [📝 v1.1.0](./CHANGELOG.md) — 2026-04 · Skill 上线 + URL 自动导出 ZIP + 本地图片上传(编辑器)
 - [🗺️ 近期 / 中期 / 长期规划](./docs/roadmap.md)
 
